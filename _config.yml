@@ -8,16 +8,16 @@
 title: "MEFT · Percursos curriculares"
 
 # Endereço onde o site fica publicado.
-#   Repositório "tracks" na organização "meft-coordination"  ->  https://meft-coordination.github.io/tracks/
-#   url     = "https://meft-coordination.github.io"
+#   Repositório "tracks" na organização "coordenacao-meft"  ->  https://coordenacao-meft.github.io/tracks/
+#   url     = "https://coordenacao-meft.github.io"
 #   baseurl = "/tracks"        (nome do repositório, com "/" antes)
 # Se o repositório se chamar "<organizacao>.github.io", use baseurl: ""
-url: "https://meft-coordination.github.io"
+url: "https://coordenacao-meft.github.io"
 baseurl: "/tracks"
 
 # Endereço do repositório no GitHub (usado nas ligações "Editar no GitHub").
 # Deixe vazio ("") para esconder essas ligações.
-repository_url: "https://github.com/meft-coordination/tracks"
+repository_url: "https://github.com/coordenacao-meft/tracks"
 repository_branch: "main"
 
 markdown: kramdown
