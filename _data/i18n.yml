@@ -48,6 +48,7 @@ year_2:           { pt: "2.º ano", en: "2nd year" }
 not_offered:      { pt: "Não funciona em", en: "Not offered in" }
 
 guide:            { pt: "Responsável pelo percurso", en: "Track guide" }
+contact_label:    { pt: "Para mais informações contacta:", en: "For more information, contact:" }
 guides_title:     { pt: "Responsáveis pelos percursos", en: "Track guides" }
 contact_more:     { pt: "Para mais informações, contactar", en: "For more information, contact" }
 tbd:              { pt: "A definir", en: "To be confirmed" }
