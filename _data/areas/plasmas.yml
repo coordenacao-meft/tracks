@@ -1,0 +1,63 @@
+# ---------------------------------------------------------------------------
+# ÁREA: Física de Plasmas, Lasers e Fusão Nuclear
+# Fonte: documento enviado pela área (Prof. Jorge Vieira).
+# Estrutura dos campos: ver comentário no início de astro-gravitacao.yml
+# ---------------------------------------------------------------------------
+
+id: plasmas
+order: 4
+color: "#c2410c"
+
+name:
+  pt: "Física de Plasmas, Lasers e Fusão Nuclear"
+  en: "Plasma Physics, Lasers and Nuclear Fusion"
+
+# Nome curto (usado no índice de UCs)
+short: { pt: "Plasmas, Lasers e Fusão", en: "Plasmas, Lasers & Fusion" }
+
+summary:
+  pt: "Fusão nuclear, plasmas de baixa temperatura, aceleradores a plasma, óptica avançada, física computacional e plasmas do espaço."
+  en: "Nuclear fusion, low-temperature plasmas, plasma accelerators, advanced optics, computational physics and space plasmas."
+
+# Imagem da área (ficheiro em assets/img/areas/). Se o ficheiro não existir, não aparece.
+image:
+  file: "/assets/img/areas/plasmas.jpg"
+  alt: { pt: "Plasma, laboratório de lasers, interior de um tokamak e simulação numérica", en: "Plasma, laser laboratory, inside a tokamak and a numerical simulation" }
+  credit: { pt: "Imagem: Departamento de Física", en: "Image: Department of Physics" }
+  source: "https://fisica.tecnico.ulisboa.pt/pt/fisica-de-plasmas-lasers-e-fusao-nuclear/"
+
+guide:
+  name: "Prof. Jorge Vieira"
+  email: "jorge.vieira@tecnico.ulisboa.pt"
+  page: ""
+
+links:
+  - label: { pt: "IPFN — Instituto de Plasmas e Fusão Nuclear", en: "IPFN — Institute for Plasmas and Nuclear Fusion" }
+    url: "https://www.ipfn.tecnico.ulisboa.pt"
+  - label: { pt: "Área científica no Departamento de Física", en: "Scientific area at the Physics Department" }
+    url: "https://fisica.tecnico.ulisboa.pt/pt/fisica-de-plasmas-lasers-e-fusao-nuclear/"
+
+intro:
+  pt: "A área científica de Física dos Plasmas, Lasers e Fusão Nuclear oferece formação avançada e oportunidades de desenvolvimento de projetos de tese e de investigação em várias áreas de fronteira, abrangendo temas atuais como fusão nuclear e tecnologias energéticas, plasmas de baixa temperatura e tecnologias de processamento de materiais, física computacional e aprendizagem automática, aceleradores a plasma, óptica avançada, e plasmas do espaço e de astrofísica."
+  en: "The Plasma Physics, Lasers and Nuclear Fusion scientific area offers advanced training and opportunities for thesis and research projects in several frontier fields, covering current topics such as nuclear fusion and energy technologies, low-temperature plasmas and materials processing technologies, computational physics and machine learning, plasma accelerators, advanced optics, and space and astrophysical plasmas."
+
+core:
+  items:
+    - course: ftp
+      note: { pt: "Pode ser feita no pre-major da licenciatura.", en: "Can be taken during the BSc pre-major." }
+    - course: tdp
+    - course: ol
+    - course: fpa
+
+# Esta área não define percursos fixos de especialização; indica temas.
+tracks: []
+
+themes:
+  - { pt: "Fusão nuclear e tecnologias energéticas", en: "Nuclear fusion and energy technologies" }
+  - { pt: "Plasmas de baixa temperatura e processamento de materiais", en: "Low-temperature plasmas and materials processing" }
+  - { pt: "Física computacional e aprendizagem automática", en: "Computational physics and machine learning" }
+  - { pt: "Aceleradores a plasma", en: "Plasma accelerators" }
+  - { pt: "Óptica avançada", en: "Advanced optics" }
+  - { pt: "Plasmas do espaço e de astrofísica", en: "Space and astrophysical plasmas" }
+
+notes: []

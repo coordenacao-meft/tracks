@@ -1,0 +1,29 @@
+# ---------------------------------------------------------------------------
+# LOGÓTIPOS do cabeçalho (ficheiros na pasta assets/img/).
+# Se um ficheiro não existir, esse logótipo simplesmente não aparece.
+#
+# "file" pode ser um só ficheiro ou um por língua ({pt: ..., en: ...}).
+# "height" é a altura no ecrã, em píxeis.
+#
+# Logótipos oficiais do Técnico (identidade 2026) e manual de normas gráficas:
+#   https://tecnico.ulisboa.pt/en/about-tecnico/institutional/logo-identity-standards/
+# ---------------------------------------------------------------------------
+
+tecnico:
+  # Em uso: identidade local do Departamento de Física (versões PT e EN).
+  file: { pt: "/assets/img/logo-tecnico-df-pt.svg", en: "/assets/img/logo-tecnico-df-en.svg" }
+  height: 72
+  alt: { pt: "Departamento de Física — Técnico, Universidade de Lisboa", en: "Department of Physics — Técnico, Universidade de Lisboa" }
+  url: { pt: "https://fisica.tecnico.ulisboa.pt/", en: "https://fisica.tecnico.ulisboa.pt/en/" }
+
+  # Alternativa: logótipo principal do Técnico (tamanho mínimo em ecrã: 120 x 53 px).
+  # Para usar, apagar as 4 linhas acima (file, height, alt, url) e tirar o "#" às linhas abaixo.
+  # file: "/assets/img/logo-tecnico.svg"
+  # height: 56
+  # alt: { pt: "Técnico — Universidade de Lisboa", en: "Técnico — Universidade de Lisboa" }
+  # url: { pt: "https://tecnico.ulisboa.pt/pt/", en: "https://tecnico.ulisboa.pt/en/" }
+
+meft:
+  file: "/assets/img/logo-meft.png"
+  height: 56
+  alt: { pt: "MEFT — Mestrado em Engenharia Física Tecnológica", en: "MEFT — MSc in Engineering Physics" }

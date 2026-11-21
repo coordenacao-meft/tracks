@@ -1,0 +1,5 @@
+{%- assign _p = include.p -%}
+{%- if _p == "S1" -%}{{ site.data.i18n.period_S1[page.lang] }}
+{%- elsif _p == "S2" -%}{{ site.data.i18n.period_S2[page.lang] }}
+{%- else -%}{{ _p }}
+{%- endif -%}

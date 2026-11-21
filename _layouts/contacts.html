@@ -1,0 +1,41 @@
+---
+layout: default
+---
+{%- assign L = site.data.i18n -%}
+{%- assign C = site.data.coordination -%}
+{%- assign _areas = "" | split: "" -%}
+{%- for _pair in site.data.areas -%}{%- assign _areas = _areas | push: _pair[1] -%}{%- endfor -%}
+{%- assign _areas = _areas | sort: "order" -%}
+<div class="wrap section narrow">
+  <h1>{{ page.title }}</h1>
+
+  <h2>{{ L.guides_title[page.lang] }}</h2>
+  <div class="table-scroll">
+  <table class="ctable">
+    <thead><tr><th>{{ L.area[page.lang] }}</th><th>{{ L.guide[page.lang] }}</th></tr></thead>
+    <tbody>
+    {%- for a in _areas %}
+      {%- capture _aurl -%}/{{ page.lang }}/areas/{{ a.id }}/{%- endcapture %}
+      <tr>
+        <td><a class="area-dot" style="--area: {{ a.color }}" href="{{ _aurl | relative_url }}">{% include t.html v=a.name %}</a></td>
+        <td>
+          {%- if a.guide.name.size > 0 -%}
+          {{ a.guide.name }}{% if a.guide.email.size > 0 %}<br><a href="mailto:{{ a.guide.email }}">{{ a.guide.email }}</a>{% endif %}
+          {%- else -%}<em>{{ L.tbd[page.lang] }}</em>{%- endif -%}
+        </td>
+      </tr>
+    {%- endfor %}
+    </tbody>
+  </table>
+  </div>
+
+  <h2>{{ L.coordination[page.lang] }}</h2>
+  <p>
+    {{ C.coordinator.name }} ({{ C.academic_year }}){% if C.coordinator.email.size > 0 %} — <a href="mailto:{{ C.coordinator.email }}">{{ C.coordinator.email }}</a>{% endif %}<br>
+    {{ L.secretariat[page.lang] }}: <a href="mailto:{{ C.secretariat_email }}">{{ C.secretariat_email }}</a>
+  </p>
+
+  <div class="prose faq">
+{{ content }}
+  </div>
+</div>

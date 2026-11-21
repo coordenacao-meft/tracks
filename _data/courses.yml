@@ -1,0 +1,179 @@
+# ---------------------------------------------------------------------------
+# CATÁLOGO DE UCs — cada UC aparece aqui UMA vez.
+# Os percursos (_data/areas/*.yml) referem-se às UCs pelo identificador
+# (a palavra antes dos dois pontos, ex.: "ftp").
+#
+# Campos:
+#   name:        nome oficial (como no Fénix) em pt e en
+#   ects:        créditos
+#   period:      P1, P2, P3, P4 (UCs de um período) ou S1, S2 (UCs semestrais)
+#   fenix:       ligação para a página da UC no plano curricular do Fénix
+#   not_offered: anos letivos em que a UC NÃO funciona (ex.: ["2026/2027"])
+#
+# No início de cada ano letivo: confirmar períodos e "not_offered" com o
+# plano curricular no Fénix (https://fenix.tecnico.ulisboa.pt/cursos/meft21/curriculo).
+# Fonte destes dados: plano curricular MEFT21 no Fénix, consultado em novembro de 2026.
+# Nomes em inglês: tradução provisória, a confirmar.
+# ---------------------------------------------------------------------------
+
+# --- Física de Plasmas, Lasers e Fusão Nuclear -----------------------------
+ftp:
+  name: { pt: "Física e Tecnologia dos Plasmas", en: "Plasma Physics and Technology" }
+  ects: 6
+  period: P1
+  fenix: "https://fenix.tecnico.ulisboa.pt/cursos/meft21/disciplina-curricular/1127428915200396"
+
+tdp:
+  name: { pt: "Técnicas de Diagnóstico em Plasmas", en: "Plasma Diagnostic Techniques" }
+  ects: 6
+  period: P1
+  fenix: "https://fenix.tecnico.ulisboa.pt/cursos/meft21/disciplina-curricular/1127428915200391"
+
+ol:
+  name: { pt: "Óptica e Lasers", en: "Optics and Lasers" }
+  ects: 6
+  period: P2
+  fenix: "https://fenix.tecnico.ulisboa.pt/cursos/meft21/disciplina-curricular/1127428915200397"
+
+fpa:
+  name: { pt: "Física dos Plasmas Avançada", en: "Advanced Plasma Physics" }
+  ects: 6
+  period: P2
+  fenix: "https://fenix.tecnico.ulisboa.pt/cursos/meft21/disciplina-curricular/1127428915200413"
+
+# --- Física de Partículas e Física Nuclear ---------------------------------
+fp:
+  name: { pt: "Física de Partículas", en: "Particle Physics" }
+  ects: 6
+  period: P1
+  fenix: "https://fenix.tecnico.ulisboa.pt/cursos/meft21/disciplina-curricular/1127428915200390"
+
+fn:
+  name: { pt: "Física Nuclear", en: "Nuclear Physics" }
+  ects: 6
+  period: P1
+  fenix: "https://fenix.tecnico.ulisboa.pt/cursos/meft21/disciplina-curricular/1127428915200395"
+
+tqc:
+  name: { pt: "Teoria Quântica dos Campos", en: "Quantum Field Theory" }
+  ects: 6
+  period: P2
+  fenix: "https://fenix.tecnico.ulisboa.pt/cursos/meft21/disciplina-curricular/1690378868621518"
+
+tnfp:
+  name: { pt: "Tecnologias Nucleares e da Física de Partículas", en: "Nuclear and Particle Physics Technologies" }
+  ects: 6
+  period: P3
+  fenix: "https://fenix.tecnico.ulisboa.pt/cursos/meft21/disciplina-curricular/845953938490273"
+
+ms:
+  name: { pt: "Modelo Standard", en: "The Standard Model" }
+  ects: 6
+  period: P3
+  fenix: "https://fenix.tecnico.ulisboa.pt/cursos/meft21/disciplina-curricular/283003985068518"
+
+qcd:
+  name: { pt: "QCD e Física Hadrónica", en: "QCD and Hadronic Physics" }
+  ects: 6
+  period: P2
+  fenix: "https://fenix.tecnico.ulisboa.pt/cursos/meft21/disciplina-curricular/1127428915200420"
+
+masfae:
+  name: { pt: "Métodos de Análise e Simulação em Física de Altas Energias", en: "Analysis and Simulation Methods in High Energy Physics" }
+  ects: 3
+  period: P4
+  fenix: "https://fenix.tecnico.ulisboa.pt/cursos/meft21/disciplina-curricular/845953938490033"
+
+mma:
+  name: { pt: "Multi-Mensageiros de Astropartículas", en: "Astroparticle Multi-Messengers" }
+  ects: 3
+  period: P4
+  fenix: "https://fenix.tecnico.ulisboa.pt/cursos/meft21/disciplina-curricular/1127428915200433"
+
+estagio:
+  name: { pt: "Estágio em Tecnologias da Física Nuclear, Partículas ou Radiação", en: "Internship in Nuclear, Particle or Radiation Physics Technologies" }
+  ects: 3
+  period: P4
+  fenix: "https://fenix.tecnico.ulisboa.pt/cursos/meft21/disciplina-curricular/1127428915200411"
+
+# --- Física da Matéria Condensada e Nanotecnologia --------------------------
+nn:
+  name: { pt: "Nanotecnologias e Nanoelectrónica", en: "Nanotechnologies and Nanoelectronics" }
+  ects: 6
+  period: P2
+  fenix: "https://fenix.tecnico.ulisboa.pt/cursos/meft21/disciplina-curricular/1127428915200394"
+
+tmn:
+  name: { pt: "Técnicas de Micro e Nanofabricação", en: "Micro and Nanofabrication Techniques" }
+  ects: 6
+  period: S2
+  fenix: "https://fenix.tecnico.ulisboa.pt/cursos/meft21/disciplina-curricular/1127428915200398"
+
+fmc:
+  name: { pt: "Física da Matéria Condensada", en: "Condensed Matter Physics" }
+  ects: 6
+  period: P3
+  fenix: "https://fenix.tecnico.ulisboa.pt/cursos/meft21/disciplina-curricular/1127428915200403"
+
+ftmm:
+  name: { pt: "Física e Tecnologia dos Materiais Magnéticos", en: "Physics and Technology of Magnetic Materials" }
+  ects: 6
+  period: S1
+  fenix: "https://fenix.tecnico.ulisboa.pt/cursos/meft21/disciplina-curricular/1127428915200406"
+
+ftsc:
+  name: { pt: "Física e Tecnologia dos Semicondutores", en: "Semiconductor Physics and Technology" }
+  ects: 6
+  period: S2
+  fenix: "https://fenix.tecnico.ulisboa.pt/cursos/meft21/disciplina-curricular/1127428915200408"
+
+tppm:
+  name: { pt: "Tecnologias a Plasma para o Processamento de Materiais", en: "Plasma Technologies for Materials Processing" }
+  ects: 6
+  period: S1
+  fenix: "https://fenix.tecnico.ulisboa.pt/cursos/meft21/disciplina-curricular/1127428915200414"
+
+ees:
+  name: { pt: "Estrutura Electrónica dos Sólidos", en: "Electronic Structure of Solids" }
+  ects: 3
+  period: P1
+  fenix: "https://fenix.tecnico.ulisboa.pt/cursos/meft21/disciplina-curricular/845953938490031"
+  not_offered: ["2026/2027"]
+
+tffc:
+  name: { pt: "Transições de Fase e Fenómenos Críticos", en: "Phase Transitions and Critical Phenomena" }
+  ects: 3
+  period: P2
+  fenix: "https://fenix.tecnico.ulisboa.pt/cursos/meft21/disciplina-curricular/845953938490030"
+
+sqmc:
+  name: { pt: "Sistemas Quânticos de Muitos Corpos", en: "Quantum Many-Body Systems" }
+  ects: 6
+  period: P4
+  fenix: ""   # não aparece no plano do Fénix enquanto não funcionar; período indicado pela área
+  not_offered: ["2026/2027"]
+
+# --- Astrofísica e Gravitação -----------------------------------------------
+astro:
+  name: { pt: "Astrofísica", en: "Astrophysics" }
+  ects: 6
+  period: P1
+  fenix: "https://fenix.tecnico.ulisboa.pt/cursos/meft21/disciplina-curricular/1127428915200392"
+
+rc:
+  name: { pt: "Relatividade e Cosmologia", en: "Relativity and Cosmology" }
+  ects: 6
+  period: P3
+  fenix: "https://fenix.tecnico.ulisboa.pt/cursos/meft21/disciplina-curricular/1127428915200401"
+
+labastro:
+  name: { pt: "Laboratório de Astrofísica", en: "Astrophysics Laboratory" }
+  ects: 6
+  period: S1
+  fenix: "https://fenix.tecnico.ulisboa.pt/cursos/meft21/disciplina-curricular/1127428915200393"
+
+bhgw:
+  name: { pt: "Buracos Negros e Ondas Gravitacionais", en: "Black Holes and Gravitational Waves" }
+  ects: 6
+  period: P2
+  fenix: "https://fenix.tecnico.ulisboa.pt/cursos/meft21/disciplina-curricular/1127428915200405"

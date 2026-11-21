@@ -1,0 +1,70 @@
+---
+layout: default
+---
+{%- assign L = site.data.i18n -%}
+{%- assign _yr = site.data.coordination.academic_year -%}
+{%- assign _areas = "" | split: "" -%}
+{%- for _pair in site.data.areas -%}{%- assign _areas = _areas | push: _pair[1] -%}{%- endfor -%}
+{%- assign _areas = _areas | sort: "order" -%}
+{%- comment -%} Ordenar as UCs por período e por nome {%- endcomment -%}
+{%- assign _keys = "" | split: "" -%}
+{%- for _cp in site.data.courses -%}
+  {%- assign _cpname = _cp[1].name -%}
+  {%- capture _nm -%}{% include t.html v=_cpname %}{%- endcapture -%}
+  {%- capture _k -%}{{ _cp[1].period }}~{{ _nm | slugify: "latin" }}~{{ _cp[0] }}{%- endcapture -%}
+  {%- assign _keys = _keys | push: _k -%}
+{%- endfor -%}
+{%- assign _keys = _keys | sort -%}
+{%- assign _sem1 = "P1,P2,S1" | split: "," -%}
+{%- assign _sem2 = "P3,P4,S2" | split: "," -%}
+<div class="wrap section">
+  <h1>{{ page.title }}</h1>
+  <p class="lead-small">{{ L.courses_intro[page.lang] }}</p>
+
+  {%- for _s in (1..2) %}
+  {%- if _s == 1 %}{% assign _semset = _sem1 %}{% assign _semlabel = L.semester_1[page.lang] %}{% else %}{% assign _semset = _sem2 %}{% assign _semlabel = L.semester_2[page.lang] %}{% endif %}
+  <h2>{{ _semlabel }}</h2>
+  <div class="table-scroll">
+  <table class="ctable">
+    <thead>
+      <tr><th>{{ L.col_course[page.lang] }}</th><th>{{ L.col_ects[page.lang] }}</th><th>{{ L.col_period[page.lang] }}</th><th>{{ L.col_tracks[page.lang] }}</th></tr>
+    </thead>
+    <tbody>
+    {%- for _k in _keys %}
+      {%- assign _parts = _k | split: "~" -%}
+      {%- assign _per = _parts[0] -%}
+      {%- assign _cid = _parts[2] -%}
+      {%- unless _semset contains _per -%}{%- continue -%}{%- endunless -%}
+      {%- assign _cc = site.data.courses[_cid] %}
+      <tr{% if _cc.not_offered contains _yr %} class="off"{% endif %}>
+        <td>
+          {%- if _cc.fenix.size > 0 -%}<a href="{{ _cc.fenix }}">{% include t.html v=_cc.name %}</a>{%- else -%}{% include t.html v=_cc.name %}{%- endif -%}
+          {%- if _cc.not_offered contains _yr %} <span class="badge badge-warn">{{ L.not_offered[page.lang] }} {{ _yr }}</span>{% endif -%}
+        </td>
+        <td class="num">{{ _cc.ects }}</td>
+        <td>{% include period.html p=_per %}</td>
+        <td><div class="chips-cell">
+        {%- for _a in _areas -%}
+          {%- capture _aurl -%}/{{ page.lang }}/areas/{{ _a.id }}/{%- endcapture -%}
+          {%- capture _ashort -%}{% if _a.short.size > 0 %}{% include t.html v=_a.short %}{% else %}{% include t.html v=_a.name %}{% endif %}{%- endcapture -%}
+          {%- for _it in _a.core.items -%}
+            {%- if _it.course == _cid or _it.one_of contains _cid %}
+          <a class="chip" style="--area: {{ _a.color }}" href="{{ _aurl | relative_url }}">{{ _ashort }} · {{ L.core_short[page.lang] }}</a>
+            {%- endif -%}
+          {%- endfor -%}
+          {%- for _tr in _a.tracks -%}
+            {%- for _it in _tr.items -%}
+              {%- if _it.course == _cid or _it.one_of contains _cid %}
+          <a class="chip" style="--area: {{ _a.color }}" href="{{ _aurl | relative_url }}">{{ _ashort }} · {% include t.html v=_tr.name %}</a>
+              {%- endif -%}
+            {%- endfor -%}
+          {%- endfor -%}
+        {%- endfor %}
+        </div></td>
+      </tr>
+    {%- endfor %}
+    </tbody>
+  </table>
+  </div>
+  {%- endfor %}
+</div>

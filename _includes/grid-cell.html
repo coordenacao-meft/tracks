@@ -1,0 +1,15 @@
+{%- assign _gc = site.data.courses[include.id] -%}
+{%- assign _gyear = site.data.coordination.academic_year -%}
+{%- assign _goff = false -%}
+{%- if _gc.not_offered contains _gyear -%}{%- assign _goff = true -%}{%- endif -%}
+<div class="pg-cell p-{{ _gc.period }} {{ include.kind }}{% if include.alt %} alt{% endif %}{% if _goff %} off{% endif %}">
+      {%- if _gc.fenix.size > 0 -%}
+      <a class="pg-name" href="{{ _gc.fenix }}">{% include t.html v=_gc.name %}</a>
+      {%- else -%}
+      <span class="pg-name">{% include t.html v=_gc.name %}</span>
+      {%- endif %}
+      <span class="pg-meta">{{ _gc.ects }} ECTS
+      {%- if include.year == 2 %} · {{ site.data.i18n.year_2[page.lang] }}{% endif -%}
+      {%- if _goff %} · {{ site.data.i18n.not_offered[page.lang] }} {{ _gyear }}{% endif -%}
+      </span>
+    </div>

@@ -1,0 +1,118 @@
+# ---------------------------------------------------------------------------
+# ÁREA: Astrofísica e Gravitação
+# Fonte: documento enviado pela área (Prof. José Sande Lemos).
+#
+# Estrutura (igual em todas as áreas):
+#   id         tem de ser igual ao nome deste ficheiro (sem .yml)
+#   order      ordem em que a área aparece na página inicial
+#   color      cor da área (código hexadecimal)
+#   name, summary, intro   textos em pt e en (se faltar en, mostra-se pt)
+#   guide      docente responsável pelo percurso (email e page são opcionais)
+#   links      ligações (institutos, página da área no DF)
+#   core       componente estruturante: lista de UCs
+#   tracks     percursos de especialização (cada um com a sua lista de UCs)
+#   themes     temas de investigação (opcional)
+#   path       percurso possível ao longo dos 2 anos (opcional)
+#   notes      notas finais (opcional)
+#
+# Cada elemento de uma lista de UCs pode ser:
+#   - course: id               uma UC do catálogo (_data/courses.yml)
+#     note: {pt: ..., en: ...} (opcional) nota curta
+#     year: 2                  (opcional) ano do mestrado recomendado
+#   - one_of: [id1, id2]       escolher uma de várias UCs
+#   - free: {pt: ..., en: ...} texto livre (ex.: "UC a escolher com o orientador")
+# ---------------------------------------------------------------------------
+
+id: astro-gravitacao
+order: 1
+color: "#4338ca"
+
+name:
+  pt: "Astrofísica e Gravitação"
+  en: "Astrophysics and Gravitation"
+
+# Nome curto (usado no índice de UCs)
+short: { pt: "Astrofísica e Gravitação", en: "Astrophysics & Gravitation" }
+
+summary:
+  pt: "Matéria escura, supernovas, cosmologia, buracos negros, ondas gravitacionais e teoria de campos em espaços curvos."
+  en: "Dark matter, supernovae, cosmology, black holes, gravitational waves and field theory in curved spacetimes."
+
+# Imagem da área (ficheiro em assets/img/areas/). Se o ficheiro não existir, não aparece.
+image:
+  file: "/assets/img/areas/astro-gravitacao.jpg"
+  alt: { pt: "Galáxia NGC 3972", en: "Galaxy NGC 3972" }
+  credit: { pt: "Imagem: Departamento de Física", en: "Image: Department of Physics" }
+  source: "https://fisica.tecnico.ulisboa.pt/pt/astrofisica-e-gravitacao/"
+
+guide:
+  name: "Prof. José Sande Lemos"
+  email: ""
+  page: ""
+
+links:
+  - label: "CENTRA"
+    url: "https://centra.tecnico.ulisboa.pt"
+  - label: { pt: "Área científica no Departamento de Física", en: "Scientific area at the Physics Department" }
+    url: "https://fisica.tecnico.ulisboa.pt/pt/astrofisica-e-gravitacao/"
+
+intro:
+  pt: |
+    A área científica de Astrofísica e Gravitação proporciona formação avançada, sólida e altamente especializada, aliando rigor teórico, modelação computacional e análise de dados observacionais. Oferece amplas oportunidades para o desenvolvimento de projetos de tese e de investigação em domínios de vanguarda, promovendo uma integração ativa em redes e colaborações científicas internacionais.
+
+    Entre as principais linhas de investigação destacam-se temas centrais da ciência contemporânea, como a natureza da matéria escura, a física de supernovas, a evolução e dinâmica do Universo em cosmologia, o estudo de buracos negros e de ondas gravitacionais, bem como a formulação e aplicação da teoria de campos em espaços curvos. Estes tópicos situam-se na fronteira do conhecimento e articulam observação, experiência e teoria, contribuindo para responder a algumas das questões mais fundamentais sobre a estrutura, origem e destino do Universo. Esta área constitui, assim, um ambiente científico estimulante e exigente, ideal para quem pretende desenvolver investigação inovadora e participar ativamente no avanço da Física fundamental.
+  en: |
+    The Astrophysics and Gravitation scientific area provides advanced, solid and highly specialised training, combining theoretical rigour, computational modelling and the analysis of observational data. It offers ample opportunities for thesis and research projects in cutting-edge fields, with active integration in international scientific networks and collaborations.
+
+    Its main research lines include central topics of contemporary science, such as the nature of dark matter, the physics of supernovae, the evolution and dynamics of the Universe in cosmology, black holes and gravitational waves, and the formulation and application of field theory in curved spacetimes. These topics lie at the frontier of knowledge and bring together observation, experiment and theory, helping to answer some of the most fundamental questions about the structure, origin and fate of the Universe. The area thus offers a stimulating and demanding scientific environment, ideal for those who wish to pursue innovative research and take an active part in advancing fundamental physics.
+
+core:
+  items:
+    - course: astro
+      note: { pt: "Pode ser feita antes do mestrado.", en: "Can be taken before the MSc." }
+    - course: rc
+
+tracks:
+  - name: { pt: "Astrofísica", en: "Astrophysics" }
+    rule: { pt: "UC estruturante para quem segue Astrofísica.", en: "Core course for students following Astrophysics." }
+    items:
+      - course: labastro
+
+  - name: { pt: "Gravitação", en: "Gravitation" }
+    rule: { pt: "UC estruturante para quem segue Gravitação.", en: "Core course for students following Gravitation." }
+    items:
+      - course: bhgw
+        year: 2
+        note: { pt: "Recomendada no 2.º ano.", en: "Recommended in the 2nd year." }
+
+path:
+  - when: { pt: "1.º ano · P1", en: "Year 1 · P1" }
+    items:
+      - { pt: "Astrofísica (componente estruturante)", en: "Astrophysics (core)" }
+      - { pt: "Laboratório de Astrofísica (estruturante para Astrofísica) ou UC a escolher com o orientador", en: "Astrophysics Laboratory (core for Astrophysics) or a course chosen with the supervisor" }
+  - when: { pt: "1.º ano · P2", en: "Year 1 · P2" }
+    items:
+      - { pt: "UCs a escolher com o orientador", en: "Courses chosen with the supervisor" }
+  - when: { pt: "1.º ano · P3", en: "Year 1 · P3" }
+    items:
+      - { pt: "Relatividade e Cosmologia (componente estruturante)", en: "Relativity and Cosmology (core)" }
+      - { pt: "UC a escolher com o orientador", en: "A course chosen with the supervisor" }
+  - when: { pt: "1.º ano · P4", en: "Year 1 · P4" }
+    items:
+      - { pt: "UCs a escolher com o orientador", en: "Courses chosen with the supervisor" }
+  - when: { pt: "2.º ano · P1", en: "Year 2 · P1" }
+    items:
+      - { pt: "UCs a escolher com o orientador", en: "Courses chosen with the supervisor" }
+  - when: { pt: "2.º ano · P2", en: "Year 2 · P2" }
+    items:
+      - { pt: "Buracos Negros e Ondas Gravitacionais (estruturante para Gravitação) ou UC a escolher com o orientador", en: "Black Holes and Gravitational Waves (core for Gravitation) or a course chosen with the supervisor" }
+  - when: { pt: "2.º ano · P3", en: "Year 2 · P3" }
+    items:
+      - { pt: "Elaboração da tese em astrofísica ou gravitação", en: "Thesis work in astrophysics or gravitation" }
+  - when: { pt: "2.º ano · P4", en: "Year 2 · P4" }
+    items:
+      - { pt: "Obtenção de resultados e apresentação da tese", en: "Results and thesis defence" }
+
+notes:
+  - pt: "Outras UCs avançadas, oferecidas por diferentes áreas científicas, poderão igualmente ser integradas no percurso curricular, em articulação com o orientador, de modo a assegurar uma formação coerente, personalizada e alinhada com os objetivos específicos do projeto de investigação."
+    en: "Other advanced courses offered by other scientific areas may also be included in the study plan, in agreement with the supervisor, to ensure coherent, personalised training aligned with the specific goals of the research project."

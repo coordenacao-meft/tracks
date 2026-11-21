@@ -1,0 +1,22 @@
+{%- comment -%}
+  Uma UC numa lista. Parâmetros: id (obrigatório), note, year.
+{%- endcomment -%}
+{%- assign _c = site.data.courses[include.id] -%}
+{%- assign _year_now = site.data.coordination.academic_year -%}
+{%- if _c -%}
+<span class="course">
+  {%- if _c.fenix.size > 0 -%}
+  <a class="cname" href="{{ _c.fenix }}">{% include t.html v=_c.name %}</a>
+  {%- else -%}
+  <span class="cname">{% include t.html v=_c.name %}</span>
+  {%- endif %}
+  <span class="cmeta">{{ _c.ects }} ECTS · {% include period.html p=_c.period %}</span>
+  {%- if include.year == 2 %} <span class="badge badge-year">{{ site.data.i18n.year_2[page.lang] }}</span>{% endif -%}
+  {%- if _c.not_offered contains _year_now %} <span class="badge badge-warn">{{ site.data.i18n.not_offered[page.lang] }} {{ _year_now }}</span>{% endif -%}
+</span>
+{%- if include.note.size > 0 %}
+<span class="cnote">{% include t.html v=include.note %}</span>
+{%- endif -%}
+{%- else -%}
+<span class="course missing">[UC desconhecida em _data/courses.yml: {{ include.id }}]</span>
+{%- endif -%}

@@ -1,0 +1,62 @@
+---
+layout: default
+---
+{%- assign L = site.data.i18n -%}
+{%- assign _areas = "" | split: "" -%}
+{%- for _pair in site.data.areas -%}{%- assign _areas = _areas | push: _pair[1] -%}{%- endfor -%}
+{%- assign _areas = _areas | sort: "order" -%}
+{%- assign H = site.data.home.hero -%}
+{%- capture _hfile -%}{% include t.html v=H.file %}{%- endcapture -%}
+{%- assign _hero_img = nil -%}
+{%- if _hfile.size > 0 -%}{%- assign _hero_img = site.static_files | where: "path", _hfile | first -%}{%- endif -%}
+<section class="hero{% if _hero_img %} has-img{% endif %}">
+  <div class="wrap">
+{%- if _hero_img %}
+    <figure class="hero-band">
+      <img src="{{ _hfile | relative_url }}" alt="{% include t.html v=H.alt %}">
+      {%- if H.credit %}
+      <figcaption class="credit">{% if H.source.size > 0 %}<a href="{{ H.source }}">{% include t.html v=H.credit %}</a>{% else %}{% include t.html v=H.credit %}{% endif %}</figcaption>
+      {%- endif %}
+    </figure>
+    {%- endif %}
+
+    <h1>{{ L.site_title[page.lang] }}</h1>
+    <div class="lead">{{ page.lead | markdownify }}</div>
+    {%- if page.notice %}
+    <div class="notice">{{ page.notice | markdownify }}</div>
+    {%- endif %}
+  </div>
+</section>
+
+<section id="areas" class="wrap section">
+  <h2>{{ L.areas_title[page.lang] }}</h2>
+  <div class="cards">
+  {%- for a in _areas %}
+    {%- capture _aurl -%}/{{ page.lang }}/areas/{{ a.id }}/{%- endcapture %}
+    {%- assign _aimg = nil -%}
+    {%- if a.image.file -%}{%- assign _aimg = site.static_files | where: "path", a.image.file | first -%}{%- endif %}
+    <a class="card{% if _aimg %} has-img{% endif %}" href="{{ _aurl | relative_url }}" style="--area: {{ a.color }}">
+      {%- if _aimg %}
+      <span class="card-img"><img src="{{ a.image.file | relative_url }}" alt="{% include t.html v=a.image.alt %}" loading="lazy"></span>
+      {%- endif %}
+      <span class="card-body">
+      <h3>{% include t.html v=a.name %}</h3>
+      <p>{% include t.html v=a.summary %}</p>
+      <p class="card-meta">
+        <span>{{ L.guide[page.lang] }}: {% if a.guide.name.size > 0 %}{{ a.guide.name }}{% else %}<em>{{ L.tbd[page.lang] }}</em>{% endif %}</span>
+        {%- if a.tracks.size > 0 %}
+        <span>{{ a.tracks.size }} {{ L.n_tracks[page.lang] }}</span>
+        {%- endif %}
+      </p>
+      <span class="card-cta">{{ L.view_area[page.lang] }} →</span>
+      </span>
+    </a>
+  {%- endfor %}
+  </div>
+</section>
+
+<section class="wrap section">
+  <div class="prose">
+{{ content }}
+  </div>
+</section>

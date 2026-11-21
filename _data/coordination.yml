@@ -1,0 +1,38 @@
+# ---------------------------------------------------------------------------
+# COORDENAÇÃO — o único ficheiro a editar quando muda a equipa de coordenação.
+# ---------------------------------------------------------------------------
+
+# Ano letivo em curso. As UCs que, em _data/courses.yml, tenham este ano
+# em "not_offered" aparecem assinaladas como "Não funciona em ...".
+academic_year: "2026/2027"
+
+coordinator:
+  name: "Prof. Jorge Vieira"
+  email: "jorge.vieira@tecnico.ulisboa.pt"
+
+secretariat_email: "coordenacao@meft.tecnico.ulisboa.pt"
+
+# Data da última revisão do conteúdo (aparece no rodapé).
+last_review:
+  pt: "novembro de 2026"
+  en: "November 2026"
+
+links:
+  fenix_course: "https://fenix.tecnico.ulisboa.pt/cursos/meft21/descricao"
+  fenix_curriculum: "https://fenix.tecnico.ulisboa.pt/cursos/meft21/curriculo"
+  department:
+    pt: "https://fisica.tecnico.ulisboa.pt/"
+    en: "https://fisica.tecnico.ulisboa.pt/en/"
+  tecnico:
+    pt: "https://tecnico.ulisboa.pt/pt/"
+    en: "https://tecnico.ulisboa.pt/en/"
+
+# ---------------------------------------------------------------------------
+# HISTÓRICO DAS COORDENAÇÕES (aparece na página "Sobre este site").
+# Cada nova equipa acrescenta-se NO TOPO da lista, mantendo as anteriores.
+# "url" é opcional (página pessoal); deixar "" se não houver.
+# ---------------------------------------------------------------------------
+history:
+  - period: "2025–2026"
+    coordinator: { name: "Prof. Jorge Vieira", url: "https://p2team.github.io" }
+    vice: { name: "Prof. Guilherme Milhano", url: "" }

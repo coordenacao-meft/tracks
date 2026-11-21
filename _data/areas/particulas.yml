@@ -1,0 +1,75 @@
+# ---------------------------------------------------------------------------
+# ÁREA: Física de Partículas e Física Nuclear
+# Fonte: documento e folha de cálculo enviados pela área.
+# Estrutura dos campos: ver comentário no início de astro-gravitacao.yml
+# ---------------------------------------------------------------------------
+
+id: particulas
+order: 3
+color: "#be123c"
+
+name:
+  pt: "Física de Partículas e Física Nuclear"
+  en: "Particle and Nuclear Physics"
+
+# Nome curto (usado no índice de UCs)
+short: { pt: "Partículas e Nuclear", en: "Particle & Nuclear" }
+
+summary:
+  pt: "Física de partículas e nuclear: teoria, física experimental de altas energias e aplicações tecnológicas."
+  en: "Particle and nuclear physics: theory, experimental high-energy physics and technological applications."
+
+# Imagem da área (ficheiro em assets/img/areas/). Se o ficheiro não existir, não aparece.
+image:
+  file: "/assets/img/areas/particulas.jpg"
+  alt: { pt: "Colisão registada pela experiência CMS no LHC (CERN)", en: "Collision event recorded by the CMS experiment at the LHC (CERN)" }
+  credit: { pt: "Imagem: Departamento de Física", en: "Image: Department of Physics" }
+  source: "https://fisica.tecnico.ulisboa.pt/pt/fisica-de-particulas/"
+
+guide:
+  name: ""          # A DEFINIR — falta indicar o/a docente responsável
+  email: ""
+  page: ""
+
+links:
+  - label: { pt: "Área científica no Departamento de Física", en: "Scientific area at the Physics Department" }
+    url:
+      pt: "https://fisica.tecnico.ulisboa.pt/pt/fisica-de-particulas/"
+      en: "https://fisica.tecnico.ulisboa.pt/en/particle-and-nuclear-physics/"
+
+intro: ""
+
+core:
+  rule: { pt: "Máximo de 18 ECTS.", en: "Up to 18 ECTS." }
+  items:
+    - course: fp
+    - course: fn
+    - one_of: [tqc, tnfp]
+      note:
+        pt: "Teoria Quântica dos Campos para teoria ou experimental; Tecnologias Nucleares e da Física de Partículas para experimental ou aplicações."
+        en: "Quantum Field Theory for theory or experimental; Nuclear and Particle Physics Technologies for experimental or applications."
+
+tracks:
+  - name: { pt: "Teoria", en: "Theory" }
+    rule: { pt: "12 ECTS.", en: "12 ECTS." }
+    items:
+      - course: ms
+      - course: qcd
+
+  - name: { pt: "Física de partículas experimental", en: "Experimental particle physics" }
+    rule: { pt: "Máximo de 12 ECTS.", en: "Up to 12 ECTS." }
+    items:
+      - one_of: [ms, qcd]
+      - course: masfae
+      - course: mma
+
+  - name: { pt: "Aplicações", en: "Applications" }
+    rule: { pt: "Máximo de 12 ECTS.", en: "Up to 12 ECTS." }
+    items:
+      - course: masfae
+      - course: estagio
+      - free: { pt: "UC a escolher pel@ orientador@", en: "A course chosen by the supervisor" }
+
+notes:
+  - pt: "Há muitos estudantes que fazem um mestrado em física das partículas e física nuclear com uma forte componente curricular em eletrónica, computação, tecnologia e/ou física médica. Nestes casos, é sempre desenhado um perfil à medida pel@s orientador@s, substancialmente diferente destes percursos."
+    en: "Many students do an MSc in particle and nuclear physics with a strong curricular component in electronics, computing, technology and/or medical physics. In these cases, the supervisors always design a tailored profile, substantially different from these tracks."

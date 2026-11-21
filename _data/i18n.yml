@@ -1,0 +1,71 @@
+# ---------------------------------------------------------------------------
+# Textos da interface (menus, títulos de secções, etiquetas) em pt e en.
+# Raramente é preciso mexer aqui.
+# ---------------------------------------------------------------------------
+
+html_lang:        { pt: "pt-PT", en: "en" }
+lang_name:        { pt: "Português", en: "English" }
+site_title:       { pt: "Percursos curriculares do MEFT", en: "MEFT curricular tracks" }
+site_subtitle:    { pt: "Mestrado em Engenharia Física Tecnológica · Instituto Superior Técnico", en: "MSc in Engineering Physics · Instituto Superior Técnico" }
+skip:             { pt: "Saltar para o conteúdo", en: "Skip to content" }
+
+nav_home:         { pt: "Início", en: "Home" }
+nav_areas:        { pt: "Áreas", en: "Areas" }
+nav_courses:      { pt: "Índice de UCs", en: "Course index" }
+nav_contacts:     { pt: "Contactos e FAQ", en: "Contacts & FAQ" }
+nav_tecnico:      { pt: "Técnico", en: "Técnico" }
+nav_department:   { pt: "Departamento de Física", en: "Department of Physics" }
+nav_fenix:        { pt: "MEFT no Fénix", en: "MEFT on Fénix" }
+
+areas_title:      { pt: "Áreas científicas", en: "Scientific areas" }
+view_area:        { pt: "Ver percurso", en: "View track" }
+n_tracks:         { pt: "percursos de especialização", en: "specialisation tracks" }
+
+about:            { pt: "Sobre a área", en: "About the area" }
+core:             { pt: "Componente estruturante", en: "Core courses" }
+core_short:       { pt: "Estruturante", en: "Core" }
+specialisation:   { pt: "Especialização", en: "Specialisation" }
+themes:           { pt: "Temas de tese e investigação", en: "Thesis and research topics" }
+themes_hint:      { pt: "Fale com o/a responsável pelo percurso para escolher as UCs de especialização adequadas ao seu tema.", en: "Talk to the track guide to choose the specialisation courses that suit your topic." }
+grid_title:       { pt: "Distribuição por período", en: "Courses by period" }
+grid_note:        { pt: "Períodos segundo o plano curricular do Fénix. As UCs semestrais ocupam dois períodos.", en: "Periods as listed in the Fénix curriculum. Semester-long courses span two periods." }
+legend_title:     { pt: "Legenda", en: "Key" }
+legend_core:      { pt: "Componente estruturante", en: "Core course" }
+legend_track:     { pt: "UC de especialização (na linha do respetivo percurso)", en: "Specialisation course (in its track's row)" }
+legend_alt:       { pt: "Alternativas: escolher uma das UCs tracejadas da mesma linha", en: "Alternatives: choose one of the dashed courses in the same row" }
+legend_off:       { pt: "Não funciona em", en: "Not offered in" }
+path_title:       { pt: "Percurso possível", en: "Possible study plan" }
+notes:            { pt: "Notas", en: "Notes" }
+links:            { pt: "Ligações", en: "Links" }
+
+one_of:           { pt: "Uma de:", en: "One of:" }
+or:               { pt: "ou", en: "or" }
+semester_1:       { pt: "1.º semestre", en: "1st semester" }
+semester_2:       { pt: "2.º semestre", en: "2nd semester" }
+period_S1:        { pt: "1.º sem.", en: "Sem. 1" }
+period_S2:        { pt: "2.º sem.", en: "Sem. 2" }
+year_2:           { pt: "2.º ano", en: "2nd year" }
+not_offered:      { pt: "Não funciona em", en: "Not offered in" }
+
+guide:            { pt: "Responsável pelo percurso", en: "Track guide" }
+guides_title:     { pt: "Responsáveis pelos percursos", en: "Track guides" }
+contact_more:     { pt: "Para mais informações, contactar", en: "For more information, contact" }
+tbd:              { pt: "A definir", en: "To be confirmed" }
+area:             { pt: "Área", en: "Area" }
+
+courses_intro:    { pt: "Todas as UCs referidas nos percursos, por período, com as áreas e percursos que as recomendam.", en: "All courses mentioned in the tracks, by period, with the areas and tracks that recommend them." }
+col_course:       { pt: "UC", en: "Course" }
+col_ects:         { pt: "ECTS", en: "ECTS" }
+col_period:       { pt: "Período", en: "Period" }
+col_tracks:       { pt: "Recomendada em", en: "Recommended in" }
+
+coordination:     { pt: "Coordenação do MEFT", en: "MEFT coordination" }
+secretariat:      { pt: "Secretariado", en: "Secretariat" }
+last_review:      { pt: "Última revisão", en: "Last reviewed" }
+official_source:  { pt: "Plano curricular oficial no Fénix", en: "Official curriculum on Fénix" }
+about_site:       { pt: "Sobre este site", en: "About this site" }
+coord_history:    { pt: "Este site tem sido mantido pelas seguintes coordenações do MEFT:", en: "This site has been maintained by the following MEFT coordination teams:" }
+col_term:         { pt: "Mandato", en: "Term" }
+col_coordinator:  { pt: "Coordenador/a", en: "Coordinator" }
+col_vice:         { pt: "Vice-coordenador/a", en: "Deputy coordinator" }
+edit_area:        { pt: "Editar os dados desta área no GitHub", en: "Edit this area's data on GitHub" }

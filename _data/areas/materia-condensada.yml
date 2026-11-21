@@ -1,0 +1,62 @@
+# ---------------------------------------------------------------------------
+# ÁREA: Física da Matéria Condensada e Nanotecnologia
+# Fonte: documento enviado pela área (Prof. Paulo Freitas).
+# Estrutura dos campos: ver comentário no início de astro-gravitacao.yml
+# ---------------------------------------------------------------------------
+
+id: materia-condensada
+order: 2
+color: "#0f766e"
+
+name:
+  pt: "Física da Matéria Condensada e Nanotecnologia"
+  en: "Condensed Matter Physics and Nanotechnology"
+
+# Nome curto (usado no índice de UCs)
+short: { pt: "Matéria Condensada", en: "Condensed Matter" }
+
+summary:
+  pt: "Nanotecnologias e nanoeletrónica, micro e nanofabricação, eletrónica de spin, semicondutores e teoria da matéria condensada."
+  en: "Nanotechnologies and nanoelectronics, micro and nanofabrication, spin electronics, semiconductors and condensed matter theory."
+
+# Imagem da área (ficheiro em assets/img/areas/). Se o ficheiro não existir, não aparece.
+image:
+  file: "/assets/img/areas/materia-condensada.jpg"
+  alt: { pt: "Circuito integrado com ligações por fio", en: "Integrated circuit with wire bonds" }
+  credit: { pt: "Imagem: Departamento de Física", en: "Image: Department of Physics" }
+  source: "https://fisica.tecnico.ulisboa.pt/pt/fisica-da-materia-condensada-e-nanotecnologia/"
+
+guide:
+  name: "Prof. Paulo Freitas"
+  email: ""
+  page: ""
+
+links:
+  - label: { pt: "Área científica no Departamento de Física", en: "Scientific area at the Physics Department" }
+    url: "https://fisica.tecnico.ulisboa.pt/pt/fisica-da-materia-condensada-e-nanotecnologia/"
+
+intro: ""
+
+core:
+  items:
+    - course: nn
+    - course: tmn
+    - course: fmc
+
+tracks:
+  - name: { pt: "Experimental — eletrónica de spin e semicondutores", en: "Experimental — spin electronics and semiconductors" }
+    rule: { pt: "Escolher 2 das 3 UCs.", en: "Choose 2 of the 3 courses." }
+    items:
+      - course: ftmm
+      - course: ftsc
+      - course: tppm
+
+  - name: { pt: "Teoria", en: "Theory" }
+    items:
+      - course: ees
+      - course: tffc
+      - course: sqmc
+
+notes:
+  - pt: "Estes percursos são indicativos e poderão sempre ser ajustados incluindo opções livres (em particular nas áreas da eletrotecnia, aquisição e processamento de dados, ótica e lasers, microfluídica, cristais líquidos e *soft matter*)."
+    en: "These tracks are indicative and can always be adjusted by including free options (in particular in electrical engineering, data acquisition and processing, optics and lasers, microfluidics, liquid crystals and soft matter)."

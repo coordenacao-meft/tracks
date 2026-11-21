@@ -1,0 +1,10 @@
+# ---------------------------------------------------------------------------
+# PÁGINA INICIAL — imagem de topo (ficheiro em assets/img/home/).
+# Se "file" estiver vazio ou o ficheiro não existir, não aparece imagem.
+# ---------------------------------------------------------------------------
+
+hero:
+  file: "/assets/img/home/hero-lhc.jpg"
+  alt: { pt: "Large Hadron Collider no CERN", en: "The Large Hadron Collider at CERN" }
+  credit: { pt: "Large Hadron Collider no CERN · Imagem: Departamento de Física", en: "The Large Hadron Collider at CERN · Image: Department of Physics" }
+  source: "https://fisica.tecnico.ulisboa.pt/"

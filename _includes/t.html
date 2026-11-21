@@ -1,0 +1,14 @@
+{%- comment -%}
+  Traduz um valor: se for {pt: ..., en: ...} devolve a língua da página
+  (ou pt, se faltar a tradução); se for texto simples, devolve-o tal como está.
+  Uso: {% include t.html v=area.name %}
+  Nota: em Liquid, "x.size > 0" é a forma segura de testar se um texto,
+  lista ou tabela não está vazio.
+{%- endcomment -%}
+{%- assign _t = include.v -%}
+{%- if _t[page.lang].size > 0 -%}{{ _t[page.lang] }}
+{%- elsif _t.pt.size > 0 -%}{{ _t.pt }}
+{%- elsif _t.en.size > 0 -%}{{ _t.en }}
+{%- elsif _t.first -%}
+{%- else -%}{{ _t }}
+{%- endif -%}

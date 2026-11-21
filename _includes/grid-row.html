@@ -1,0 +1,12 @@
+  <div class="pg-label {{ include.kind }}">{{ include.label }}</div>
+  <div class="pg-row">
+  {%- for _gi in include.items -%}
+    {%- if _gi.course -%}
+    {% include grid-cell.html id=_gi.course year=_gi.year kind=include.kind %}
+    {%- elsif _gi.one_of -%}
+      {%- for _goid in _gi.one_of -%}
+    {% include grid-cell.html id=_goid alt=true kind=include.kind %}
+      {%- endfor -%}
+    {%- endif -%}
+  {%- endfor %}
+  </div>

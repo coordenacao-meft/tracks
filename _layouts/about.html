@@ -1,0 +1,32 @@
+---
+layout: default
+---
+{%- assign L = site.data.i18n -%}
+{%- assign C = site.data.coordination -%}
+<div class="wrap section narrow about">
+  <h1>{{ page.title }}</h1>
+  <div class="prose">
+{{ content }}
+  </div>
+
+  {%- if C.history.size > 0 %}
+  <p class="history-intro">{{ L.coord_history[page.lang] }}</p>
+  <div class="table-scroll">
+  <table class="ctable">
+    <thead><tr><th>{{ L.col_term[page.lang] }}</th><th>{{ L.col_coordinator[page.lang] }}</th><th>{{ L.col_vice[page.lang] }}</th></tr></thead>
+    <tbody>
+    {%- for h in C.history %}
+      <tr>
+        <td class="nowrap">{{ h.period }}</td>
+        <td>{% if h.coordinator.url.size > 0 %}<a href="{{ h.coordinator.url }}">{{ h.coordinator.name }}</a>{% else %}{{ h.coordinator.name }}{% endif %}</td>
+        <td>{% if h.vice.url.size > 0 %}<a href="{{ h.vice.url }}">{{ h.vice.name }}</a>{% else %}{{ h.vice.name }}{% endif %}</td>
+      </tr>
+      {%- if h.note %}
+      <tr class="note-row"><td></td><td colspan="2">{% include t.html v=h.note %}</td></tr>
+      {%- endif %}
+    {%- endfor %}
+    </tbody>
+  </table>
+  </div>
+  {%- endif %}
+</div>

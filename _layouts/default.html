@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+{%- assign L = site.data.i18n -%}
+{%- assign C = site.data.coordination -%}
+{%- assign lang = page.lang | default: "pt" -%}
+{%- if lang == "en" -%}{%- assign other = "pt" -%}{%- else -%}{%- assign other = "en" -%}{%- endif -%}
+{%- assign alt_page = nil -%}
+{%- if page.ref -%}{%- assign alt_page = site.pages | where: "ref", page.ref | where: "lang", other | first -%}{%- endif -%}
+{%- assign p_home = site.pages | where: "ref", "home" | where: "lang", lang | first -%}
+{%- assign p_courses = site.pages | where: "ref", "courses" | where: "lang", lang | first -%}
+{%- assign p_contacts = site.pages | where: "ref", "contacts" | where: "lang", lang | first -%}
+{%- assign p_about = site.pages | where: "ref", "about" | where: "lang", lang | first -%}
+{%- if page.area -%}
+  {%- assign _dA = site.data.areas[page.area] -%}
+  {%- capture ptitle -%}{% include t.html v=_dA.name %}{%- endcapture -%}
+{%- else -%}
+  {%- assign ptitle = page.title -%}
+{%- endif %}
+<html lang="{{ L.html_lang[lang] }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.ref != "home" and ptitle.size > 0 %}{{ ptitle }} · {% endif %}{{ L.site_title[lang] }}</title>
+  <meta name="description" content="{{ L.site_title[lang] }} — {{ L.site_subtitle[lang] }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  {%- if alt_page %}
+  <link rel="alternate" hreflang="{{ L.html_lang[other] }}" href="{{ alt_page.url | absolute_url }}">
+  {%- endif %}
+</head>
+<body>
+  <a class="skip" href="#main">{{ L.skip[lang] }}</a>
+  {%- assign LG = site.data.logos -%}
+  {%- capture _lt_file -%}{% include t.html v=LG.tecnico.file %}{%- endcapture -%}
+  {%- capture _lm_file -%}{% include t.html v=LG.meft.file %}{%- endcapture -%}
+  {%- assign _logo_ist = site.static_files | where: "path", _lt_file | first -%}
+  {%- assign _logo_meft = site.static_files | where: "path", _lm_file | first -%}
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <nav class="toplinks" aria-label="Links">
+        <a href="{% include t.html v=C.links.tecnico %}">{{ L.nav_tecnico[lang] }}</a>
+        <a href="{% include t.html v=C.links.department %}">{{ L.nav_department[lang] }}</a>
+        <a href="{{ C.links.fenix_course }}">{{ L.nav_fenix[lang] }}</a>
+      </nav>
+      {%- if alt_page %}
+      <a class="lang-switch" href="{{ alt_page.url | relative_url }}" hreflang="{{ L.html_lang[other] }}" lang="{{ L.html_lang[other] }}">{{ L.lang_name[other] }}</a>
+      {%- endif %}
+    </div>
+  </div>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="brand-wrap">
+        {%- if _logo_ist %}
+        <a class="logo logo-tecnico" href="{% include t.html v=LG.tecnico.url %}"><img src="{{ _lt_file | relative_url }}" alt="{% include t.html v=LG.tecnico.alt %}" style="--logo-h: {{ LG.tecnico.height | default: 56 }}px"></a>
+        <span class="logo-sep" aria-hidden="true"></span>
+        {%- endif %}
+        {%- if _logo_meft %}
+        <a class="logo logo-meft-link" href="{{ p_home.url | relative_url }}"><img class="logo-meft" src="{{ _lm_file | relative_url }}" alt="{% include t.html v=LG.meft.alt %}" style="--logo-h: {{ LG.meft.height | default: 56 }}px"></a>
+        {%- endif %}
+        <a class="brand" href="{{ p_home.url | relative_url }}">
+          <span class="brand-title">{{ L.site_title[lang] }}</span>
+          <span class="brand-sub">{{ L.site_subtitle[lang] }}</span>
+        </a>
+      </div>
+      <nav class="nav" aria-label="{{ L.nav_home[lang] }}">
+        <a href="{{ p_home.url | relative_url }}#areas">{{ L.nav_areas[lang] }}</a>
+        <a href="{{ p_courses.url | relative_url }}"{% if page.ref == "courses" %} aria-current="page"{% endif %}>{{ L.nav_courses[lang] }}</a>
+        <a href="{{ p_contacts.url | relative_url }}"{% if page.ref == "contacts" %} aria-current="page"{% endif %}>{{ L.nav_contacts[lang] }}</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+{{ content }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div>
+        <strong>{{ L.coordination[lang] }}</strong> ({{ C.academic_year }}):
+        {{ C.coordinator.name }}{% if C.coordinator.email.size > 0 %} · <a href="mailto:{{ C.coordinator.email }}">{{ C.coordinator.email }}</a>{% endif %}
+        <br>{{ L.secretariat[lang] }}: <a href="mailto:{{ C.secretariat_email }}">{{ C.secretariat_email }}</a>
+      </div>
+      <div class="footer-right">
+        <a href="{{ C.links.fenix_curriculum }}">{{ L.official_source[lang] }}</a>
+        · <a href="{% include t.html v=C.links.department %}">{{ L.nav_department[lang] }}</a>
+        <br>{{ L.last_review[lang] }}: {% include t.html v=C.last_review %}
+        {%- if p_about %} · <a class="about-link" href="{{ p_about.url | relative_url }}">{{ L.about_site[lang] }}</a>{% endif %}
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

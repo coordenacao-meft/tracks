@@ -1,0 +1,46 @@
+{%- comment -%}
+  Grelha P1–P4 gerada automaticamente a partir dos períodos em _data/courses.yml.
+  Parâmetro: area
+{%- endcomment -%}
+{%- assign _ga = include.area -%}
+{%- assign _gl = site.data.i18n -%}
+{%- assign _gyr = site.data.coordination.academic_year -%}
+{%- comment -%} Que elementos da legenda são precisos nesta área? {%- endcomment -%}
+{%- assign _has_alt = false -%}{%- assign _has_off = false -%}
+{%- assign _gall = _ga.core.items -%}
+{%- for _gt in _ga.tracks -%}{%- assign _gall = _gall | concat: _gt.items -%}{%- endfor -%}
+{%- for _gi in _gall -%}
+  {%- if _gi.one_of -%}{%- assign _has_alt = true -%}{%- endif -%}
+  {%- assign _gids = _gi.one_of | default: "" -%}
+  {%- if _gi.course -%}{%- assign _gids = _gi.course | split: "," -%}{%- endif -%}
+  {%- for _gid in _gids -%}
+    {%- if site.data.courses[_gid].not_offered contains _gyr -%}{%- assign _has_off = true -%}{%- endif -%}
+  {%- endfor -%}
+{%- endfor %}
+<div class="pg-legend" role="note" aria-label="{{ _gl.legend_title[page.lang] }}">
+  <span class="lg-item"><span class="lg-swatch k-core"></span>{{ _gl.legend_core[page.lang] }}</span>
+  {%- if _ga.tracks.size > 0 %}
+  <span class="lg-item"><span class="lg-swatch k-track"></span>{{ _gl.legend_track[page.lang] }}</span>
+  {%- endif %}
+  {%- if _has_alt %}
+  <span class="lg-item"><span class="lg-swatch alt"></span>{{ _gl.legend_alt[page.lang] }}</span>
+  {%- endif %}
+  {%- if _has_off %}
+  <span class="lg-item"><span class="lg-swatch k-track off"></span>{{ _gl.legend_off[page.lang] }} {{ _gyr }}</span>
+  {%- endif %}
+</div>
+<div class="grid-scroll">
+<div class="pgrid">
+  <div class="pg-corner"></div>
+  <div class="pg-sem" style="grid-column: 2 / span 2">{{ _gl.semester_1[page.lang] }}</div>
+  <div class="pg-sem" style="grid-column: 4 / span 2">{{ _gl.semester_2[page.lang] }}</div>
+  <div class="pg-corner"></div>
+  <div class="pg-per">P1</div><div class="pg-per">P2</div><div class="pg-per">P3</div><div class="pg-per">P4</div>
+  {%- assign _gcore = _gl.core_short[page.lang] %}
+  {% include grid-row.html label=_gcore items=_ga.core.items kind="k-core" %}
+  {%- for _gtr in _ga.tracks -%}
+  {%- capture _glab -%}{% include t.html v=_gtr.name %}{%- endcapture -%}
+  {% include grid-row.html label=_glab items=_gtr.items kind="k-track" %}
+  {%- endfor %}
+</div>
+</div>

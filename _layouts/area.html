@@ -1,0 +1,132 @@
+---
+layout: default
+---
+{%- assign L = site.data.i18n -%}
+{%- assign A = site.data.areas[page.area] -%}
+{%- assign p_home = site.pages | where: "ref", "home" | where: "lang", page.lang | first -%}
+{%- assign _img = nil -%}
+{%- if A.image.file -%}{%- assign _img = site.static_files | where: "path", A.image.file | first -%}{%- endif %}
+<article class="area" style="--area: {{ A.color }}">
+  <header class="area-head{% if _img %} has-img{% endif %}">
+    <div class="wrap area-head-grid">
+    <div class="area-head-text">
+      <p class="eyebrow"><a href="{{ p_home.url | relative_url }}#areas">{{ L.areas_title[page.lang] }}</a></p>
+      <h1>{% include t.html v=A.name %}</h1>
+      <p class="area-summary">{% include t.html v=A.summary %}</p>
+      <div class="area-meta">
+        <div class="guide-box">
+          <span class="label">{{ L.guide[page.lang] }}</span>
+          {%- if A.guide.name.size > 0 %}
+          <strong>{% if A.guide.page.size > 0 %}<a href="{{ A.guide.page }}">{{ A.guide.name }}</a>{% else %}{{ A.guide.name }}{% endif %}</strong>
+          {%- if A.guide.email.size > 0 %}<a href="mailto:{{ A.guide.email }}">{{ A.guide.email }}</a>{% endif %}
+          {%- else %}
+          <strong><em>{{ L.tbd[page.lang] }}</em></strong>
+          {%- endif %}
+        </div>
+        {%- if A.links.size > 0 %}
+        <div class="links-box">
+          <span class="label">{{ L.links[page.lang] }}</span>
+          <ul class="links">
+          {%- for l in A.links %}
+            {%- capture _lurl -%}{% include t.html v=l.url %}{%- endcapture %}
+            <li><a href="{{ _lurl }}">{% include t.html v=l.label %}</a></li>
+          {%- endfor %}
+          </ul>
+        </div>
+        {%- endif %}
+      </div>
+    </div>
+    {%- if _img %}
+    <figure class="area-figure">
+      <img src="{{ A.image.file | relative_url }}" alt="{% include t.html v=A.image.alt %}">
+      <figcaption class="credit">{% include t.html v=A.image.alt %} · {% if A.image.source.size > 0 %}<a href="{{ A.image.source }}">{% include t.html v=A.image.credit %}</a>{% else %}{% include t.html v=A.image.credit %}{% endif %}</figcaption>
+    </figure>
+    {%- endif %}
+    </div>
+  </header>
+
+  <div class="wrap area-body">
+    {%- if A.intro.size > 0 %}
+    <section class="section prose">
+      <h2>{{ L.about[page.lang] }}</h2>
+      {%- capture _intro -%}{% include t.html v=A.intro %}{%- endcapture %}
+      {{ _intro | markdownify }}
+    </section>
+    {%- endif %}
+
+    <section class="section">
+      <h2>{{ L.core[page.lang] }}</h2>
+      {%- if A.core.rule.size > 0 %}<p class="rule">{% include t.html v=A.core.rule %}</p>{% endif %}
+      <div class="block block-core">
+        {% include items.html items=A.core.items %}
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>{{ L.specialisation[page.lang] }}</h2>
+      {%- if A.tracks.size > 0 %}
+      <div class="tracks">
+      {%- for tr in A.tracks %}
+        <div class="block track">
+          <h3>{% include t.html v=tr.name %}</h3>
+          {%- if tr.rule.size > 0 %}<p class="rule">{% include t.html v=tr.rule %}</p>{% endif %}
+          {% include items.html items=tr.items %}
+        </div>
+      {%- endfor %}
+      </div>
+      {%- endif %}
+      {%- if A.themes.size > 0 %}
+      <h3 class="h-sub">{{ L.themes[page.lang] }}</h3>
+      <ul class="chips">
+      {%- for th in A.themes %}
+        <li>{% include t.html v=th %}</li>
+      {%- endfor %}
+      </ul>
+      <p class="hint">{{ L.themes_hint[page.lang] }}</p>
+      {%- endif %}
+    </section>
+
+    <section class="section">
+      <h2>{{ L.grid_title[page.lang] }}</h2>
+      {% include grid.html area=A %}
+      <p class="small">{{ L.grid_note[page.lang] }}</p>
+    </section>
+
+    {%- if A.path.size > 0 %}
+    <section class="section">
+      <h2>{{ L.path_title[page.lang] }}</h2>
+      <ol class="path">
+      {%- for st in A.path %}
+        <li>
+          <span class="when">{% include t.html v=st.when %}</span>
+          <ul>
+          {%- for x in st.items %}
+            <li>{% include t.html v=x %}</li>
+          {%- endfor %}
+          </ul>
+        </li>
+      {%- endfor %}
+      </ol>
+    </section>
+    {%- endif %}
+
+    {%- if A.notes.size > 0 %}
+    <section class="section prose">
+      <h2>{{ L.notes[page.lang] }}</h2>
+      {%- for n in A.notes %}
+      {%- capture _note -%}{% include t.html v=n %}{%- endcapture %}
+      {{ _note | markdownify }}
+      {%- endfor %}
+    </section>
+    {%- endif %}
+
+    <aside class="contact-box">
+      {{ L.contact_more[page.lang] }}
+      {% if A.guide.name.size > 0 %}<strong>{{ A.guide.name }}</strong>{% if A.guide.email.size > 0 %} — <a href="mailto:{{ A.guide.email }}">{{ A.guide.email }}</a>{% endif %}{% else %}<em>{{ L.tbd[page.lang] }}</em>{% endif %}.
+    </aside>
+
+    {%- if site.repository_url.size > 0 %}
+    <p class="edit-link"><a href="{{ site.repository_url }}/edit/{{ site.repository_branch }}/_data/areas/{{ A.id }}.yml">{{ L.edit_area[page.lang] }}</a></p>
+    {%- endif %}
+  </div>
+</article>

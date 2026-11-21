@@ -1,0 +1,25 @@
+{%- comment -%}
+  Lista de UCs de um bloco (componente estruturante ou percurso).
+  Parâmetro: items
+{%- endcomment -%}
+<ul class="items">
+{%- for it in include.items %}
+  <li>
+  {%- if it.course -%}
+    {% include course.html id=it.course note=it.note year=it.year %}
+  {%- elsif it.one_of -%}
+    <span class="oneof-label">{{ site.data.i18n.one_of[page.lang] }}</span>
+    <ul class="oneof">
+    {%- for oid in it.one_of %}
+      <li>{% include course.html id=oid %}</li>
+    {%- endfor %}
+    </ul>
+    {%- if it.note.size > 0 %}
+    <span class="cnote">{% include t.html v=it.note %}</span>
+    {%- endif -%}
+  {%- elsif it.free -%}
+    <span class="free">{% include t.html v=it.free %}</span>
+  {%- endif -%}
+  </li>
+{%- endfor %}
+</ul>
