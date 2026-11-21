@@ -14,6 +14,8 @@ name:
 
 # Nome curto (usado no índice de UCs)
 short: { pt: "Matéria Condensada", en: "Condensed Matter" }
+# Nome do percurso, usado na linha de contacto no fim da página da área
+track_name: { pt: "Percurso em Física da Matéria Condensada e Nanotecnologia", en: "Track in Condensed Matter Physics and Nanotechnology" }
 
 summary:
   pt: "Nanotecnologias e nanoeletrónica, micro e nanofabricação, eletrónica de spin, semicondutores e teoria da matéria condensada."
@@ -32,8 +34,15 @@ guide:
   page: ""
 
 links:
+  # Unidades de investigação, como na página da área científica no DF
+  - label: { pt: "INESC MN — INESC Microsistemas e Nanotecnologias", en: "INESC MN — INESC Microsystems and Nanotechnologies" }
+    url: "https://www.inesc-mn.pt"
+  - label: { pt: "CeFEMA — Centro de Física e Engenharia de Materiais Avançados", en: "CeFEMA — Center of Physics and Engineering of Advanced Materials" }
+    url: "https://cefema.tecnico.ulisboa.pt"
   - label: { pt: "Área científica no Departamento de Física", en: "Scientific area at the Physics Department" }
-    url: "https://fisica.tecnico.ulisboa.pt/pt/fisica-da-materia-condensada-e-nanotecnologia/"
+    url:
+      pt: "https://fisica.tecnico.ulisboa.pt/pt/fisica-da-materia-condensada-e-nanotecnologia/"
+      en: "https://fisica.tecnico.ulisboa.pt/en/condensed-matter-and-nanotechnology/"
 
 intro: ""
 

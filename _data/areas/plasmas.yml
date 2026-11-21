@@ -14,6 +14,8 @@ name:
 
 # Nome curto (usado no índice de UCs)
 short: { pt: "Plasmas, Lasers e Fusão", en: "Plasmas, Lasers & Fusion" }
+# Nome do percurso, usado na linha de contacto no fim da página da área
+track_name: { pt: "Percurso em Lasers, Plasmas e Fusão Nuclear", en: "Track in Lasers, Plasmas and Nuclear Fusion" }
 
 summary:
   pt: "Fusão nuclear, plasmas de baixa temperatura, aceleradores a plasma, óptica avançada, física computacional e plasmas do espaço."
@@ -32,10 +34,13 @@ guide:
   page: ""
 
 links:
+  # Unidades de investigação, como na página da área científica no DF
   - label: { pt: "IPFN — Instituto de Plasmas e Fusão Nuclear", en: "IPFN — Institute for Plasmas and Nuclear Fusion" }
     url: "https://www.ipfn.tecnico.ulisboa.pt"
   - label: { pt: "Área científica no Departamento de Física", en: "Scientific area at the Physics Department" }
-    url: "https://fisica.tecnico.ulisboa.pt/pt/fisica-de-plasmas-lasers-e-fusao-nuclear/"
+    url:
+      pt: "https://fisica.tecnico.ulisboa.pt/pt/fisica-de-plasmas-lasers-e-fusao-nuclear/"
+      en: "https://fisica.tecnico.ulisboa.pt/en/plasmas-laser-and-fusion/"
 
 intro:
   pt: "A área científica de Física dos Plasmas, Lasers e Fusão Nuclear oferece formação avançada e oportunidades de desenvolvimento de projetos de tese e de investigação em várias áreas de fronteira, abrangendo temas atuais como fusão nuclear e tecnologias energéticas, plasmas de baixa temperatura e tecnologias de processamento de materiais, física computacional e aprendizagem automática, aceleradores a plasma, óptica avançada, e plasmas do espaço e de astrofísica."

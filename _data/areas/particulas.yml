@@ -14,6 +14,8 @@ name:
 
 # Nome curto (usado no índice de UCs)
 short: { pt: "Partículas e Nuclear", en: "Particle & Nuclear" }
+# Nome do percurso, usado na linha de contacto no fim da página da área
+track_name: { pt: "Percurso em Física de Partículas e Física Nuclear", en: "Track in Particle and Nuclear Physics" }
 
 summary:
   pt: "Física de partículas e nuclear: teoria, física experimental de altas energias e aplicações tecnológicas."
@@ -32,6 +34,13 @@ guide:
   page: ""
 
 links:
+  # Unidades de investigação, como na página da área científica no DF
+  - label: { pt: "C2TN — Centro de Ciências e Tecnologias Nucleares", en: "C2TN — Center for Nuclear Sciences and Technologies" }
+    url: "https://c2tn.tecnico.ulisboa.pt"
+  - label: { pt: "CFTP — Centro de Física Teórica de Partículas", en: "CFTP — Center for Theoretical Particle Physics" }
+    url: "http://cftp.tecnico.ulisboa.pt"
+  - label: { pt: "LIP — Laboratório de Instrumentação e Física Experimental de Partículas", en: "LIP — Laboratory for Instrumentation and Experimental Particle Physics" }
+    url: "https://www.lip.pt"
   - label: { pt: "Área científica no Departamento de Física", en: "Scientific area at the Physics Department" }
     url:
       pt: "https://fisica.tecnico.ulisboa.pt/pt/fisica-de-particulas/"

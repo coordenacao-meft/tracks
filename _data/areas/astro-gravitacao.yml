@@ -33,6 +33,8 @@ name:
 
 # Nome curto (usado no índice de UCs)
 short: { pt: "Astrofísica e Gravitação", en: "Astrophysics & Gravitation" }
+# Nome do percurso, usado na linha de contacto no fim da página da área
+track_name: { pt: "Percurso em Astrofísica e Gravitação", en: "Track in Astrophysics and Gravitation" }
 
 summary:
   pt: "Matéria escura, supernovas, cosmologia, buracos negros, ondas gravitacionais e teoria de campos em espaços curvos."
@@ -51,10 +53,13 @@ guide:
   page: ""
 
 links:
-  - label: "CENTRA"
+  # Unidades de investigação, como na página da área científica no DF
+  - label: { pt: "CENTRA — Centro de Astrofísica e Gravitação", en: "CENTRA — Center for Astrophysics and Gravitation" }
     url: "https://centra.tecnico.ulisboa.pt"
   - label: { pt: "Área científica no Departamento de Física", en: "Scientific area at the Physics Department" }
-    url: "https://fisica.tecnico.ulisboa.pt/pt/astrofisica-e-gravitacao/"
+    url:
+      pt: "https://fisica.tecnico.ulisboa.pt/pt/astrofisica-e-gravitacao/"
+      en: "https://fisica.tecnico.ulisboa.pt/en/astrophysics-and-gravitation/"
 
 intro:
   pt: |
