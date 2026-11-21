@@ -32,6 +32,9 @@ layout: default
   <h2>{{ L.coordination[page.lang] }}</h2>
   <p>
     {{ C.coordinator.name }} ({{ C.academic_year }}){% if C.coordinator.email.size > 0 %} — <a href="mailto:{{ C.coordinator.email }}">{{ C.coordinator.email }}</a>{% endif %}<br>
+    {%- if C.vice_coordinator.name.size > 0 %}
+    {{ C.vice_coordinator.name }}{% if C.vice_coordinator.email.size > 0 %} — <a href="mailto:{{ C.vice_coordinator.email }}">{{ C.vice_coordinator.email }}</a>{% endif %}<br>
+    {%- endif %}
     {{ L.secretariat[page.lang] }}: <a href="mailto:{{ C.secretariat_email }}">{{ C.secretariat_email }}</a>
   </p>
 
