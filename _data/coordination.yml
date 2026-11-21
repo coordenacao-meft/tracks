@@ -10,6 +10,11 @@ coordinator:
   name: "Prof. Jorge Vieira"
   email: "jorge.vieira@tecnico.ulisboa.pt"
 
+# Vice-coordenador/a (aparece no rodapé e na página de contactos; deixe name: "" para esconder).
+vice_coordinator:
+  name: "Prof. Guilherme Milhano"
+  email: "guilherme.milhano@tecnico.ulisboa.pt"
+
 secretariat_email: "coordenacao@meft.tecnico.ulisboa.pt"
 
 # Data da última revisão do conteúdo (aparece no rodapé).
