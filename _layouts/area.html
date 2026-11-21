@@ -15,7 +15,7 @@ layout: default
       <p class="area-summary">{% include t.html v=A.summary %}</p>
       <div class="area-meta">
         <div class="guide-box">
-          <span class="label">{{ L.guide[page.lang] }}</span>
+          <span class="label">{{ L.contact_label[page.lang] }}</span>
           {%- if A.guide.name.size > 0 %}
           <strong>{% if A.guide.page.size > 0 %}<a href="{{ A.guide.page }}">{{ A.guide.name }}</a>{% else %}{{ A.guide.name }}{% endif %}</strong>
           {%- if A.guide.email.size > 0 %}<a href="mailto:{{ A.guide.email }}">{{ A.guide.email }}</a>{% endif %}
@@ -121,8 +121,13 @@ layout: default
     {%- endif %}
 
     <aside class="contact-box">
+      {%- if A.track_name %}
+      <strong>{% include t.html v=A.track_name %}</strong>:
+      {% if A.guide.name.size > 0 %}{{ A.guide.name }}{% if A.guide.email.size > 0 %} — <a href="mailto:{{ A.guide.email }}">{{ A.guide.email }}</a>{% endif %}{% else %}<em>{{ L.tbd[page.lang] }}</em>{% endif %}
+      {%- else %}
       {{ L.contact_more[page.lang] }}
       {% if A.guide.name.size > 0 %}<strong>{{ A.guide.name }}</strong>{% if A.guide.email.size > 0 %} — <a href="mailto:{{ A.guide.email }}">{{ A.guide.email }}</a>{% endif %}{% else %}<em>{{ L.tbd[page.lang] }}</em>{% endif %}.
+      {%- endif %}
     </aside>
 
     {%- if site.repository_url.size > 0 %}
